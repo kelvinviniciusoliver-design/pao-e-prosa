@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pão & Prosa — Padaria Artesanal</title>
+  <meta name="description" content="Pães quentinhos e frescos todos os dias — Padaria Pão & Prosa" />
+
+  <!-- Estilos (CSS moderno usando Grid/Flex) -->
+  <style>
+    :root{
+      --bg:#fff8f0;
+      --accent:#c94f2c;
+      --muted:#6b6b6b;
+      --card:#fff;
+      --glass: rgba(255,255,255,0.65);
+      --maxw:1100px;
+      --radius:14px;
+      --shadow: 0 6px 20px rgba(0,0,0,0.08);
+      --ff: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff);
+      background:linear-gradient(180deg, #fffdf9 0%, var(--bg) 100%);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding-bottom:60px;
+    }
+    .wrap{max-width:var(--maxw);margin:24px auto;padding:0 18px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;padding:12px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff8a65);
+      display:grid;place-items:center;color:white;font-weight:700;font-size:18px;box-shadow:var(--shadow)
+    }
+    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:var(--glass);color:#111}
+
+    /* Hero */
+    .hero{
+      display:grid;grid-template-columns:1fr;gap:18px;align-items:center;margin:18px 0;padding:22px;border-radius:var(--radius);background:linear-gradient(90deg, rgba(201,79,44,0.06), rgba(255,138,101,0.02));
+    }
+    .hero-inner{display:grid;gap:12px}
+    .hero h1{margin:0;font-size:clamp(22px,4vw,36px);}
+    .lead{color:var(--muted)}
+    .cta-row{display:flex;gap:8px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border:none;border-radius:12px;cursor:pointer;text-decoration:none}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(201,79,44,0.13)}
+
+    .hero-media{height:220px;border-radius:12px;overflow:hidden;background:#eee}
+    .hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Sections */
+    .sections{display:grid;gap:22px;margin-top:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .card h3{margin:10px 0 6px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1fr;gap:12px}
+    .about-inner{display:grid;gap:8px}
+
+    /* Contact */
+    form{display:grid;gap:10px}
+    label{font-size:13px;color:var(--muted)}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .note{font-size:13px;color:var(--muted)}
+
+    /* Footer */
+    footer{margin-top:18px;padding:18px 0;border-top:1px solid #f0e7e2;color:var(--muted)}
+
+    /* Back to top */
+    #backToTop{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:white;border:none;cursor:pointer;box-shadow:var(--shadow);transform:translateY(120%);opacity:0;transition:all .28s}
+    #backToTop.show{transform:translateY(0);opacity:1}
+
+    /* Responsive tweaks */
+    @media(min-width:900px){
+      .hero{grid-template-columns:1fr 420px}
+      .about{grid-template-columns:1fr 360px}
+      .hero-media{height:320px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">P& P</div>
+        <div>
+          <div style="font-weight:700;">Padaria Pão & Prosa</div>
+          <div style="font-size:13px;color:var(--muted)">Pães artesanais & histórias da manhã</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <h1>Pães quentinhos e frescos todos os dias!</h1>
+        <p class="lead">Da fornada ao balcão: receitas tradicionais do Seu Joaquim feitas com carinho. Aceitamos encomendas para festas e eventos.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="#contato">Encomendar</a>
+          <a class="btn ghost" href="#produtos">Ver produtos</a>
+        </div>
+
+        <div style="margin-top:8px;font-size:13px;color:var(--muted)">Horário: Seg–Sáb 06:00–13:00 • Domingo fechado | Telefone: (00) 0 0000-0000</div>
+      </div>
+
+      <div class="hero-media card" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pães frescos"/>
+      </div>
+    </section>
+
+    <!-- Produtos -->
+    <section class="sections" id="produtos">
+      <h2>Produtos em destaque</h2>
+      <div class="grid-3">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pão francês" />
+          <h3>Pão francês</h3>
+          <p>Crocante por fora, macio por dentro — o clássico da manhã.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1542826438-5e1b19b63a37?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Bolo caseiro" />
+          <h3>Bolos caseiros</h3>
+          <p>Sabor de casa: fubá, chocolate e sabores sazonais.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Café" />
+          <h3>Cafés especiais</h3>
+          <p>Expresso e coados preparados na hora.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="sections" id="sobre">
+      <h2>Sobre nós</h2>
+      <div class="about card">
+        <div class="about-inner">
+          <p><strong>Padaria Pão & Prosa</strong> é um pequeno negócio de bairro fundado pelo Seu Joaquim, que aprendeu as receitas com a avó e abriu a padaria há mais de 25 anos. Aqui, além do pão, vendemos histórias — e um cafezinho para acompanhar.</p>
+
+          <p class="note">Nosso compromisso: ingredientes frescos, fermentação bem cuidada e atendimento com sorriso.</p>
+        </div>
+
+        <div style="padding-top:6px">
+          <h3>Nos visite</h3>
+          <p class="note">Rua das Flores, 123 — Bairro Aconchego • Seg–Sáb 06:00–13:00</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="sections" id="contato">
+      <h2>Fale com a gente</h2>
+      <div class="about">
+        <div class="card">
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div>
+                <label for="name">Nome</label>
+                <input id="name" name="name" type="text" required minlength="2" placeholder="Seu nome" />
+              </div>
+              <div>
+                <label for="email">E‑mail</label>
+                <input id="email" name="email" type="email" required placeholder="seu@exemplo.com" />
+              </div>
+            </div>
+
+            <div>
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" required minlength="10" placeholder="Ex.: Gostaria de encomendar 30 pães..."></textarea>
+            </div>
+
+            <div style="display:flex;gap:8px;align-items:center">
+              <button type="submit" class="btn">Enviar mensagem</button>
+              <div id="formStatus" style="font-size:13px;color:var(--muted)"></div>
+            </div>
+
+            <p class="note">Dica: ao enviar, o formulário será validado. Para receber de verdade mensagens, conecte a ação do formulário a um serviço (Formspree, Netlify Forms ou seu servidor).</p>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h3>Outras formas de contato</h3>
+          <p class="note">Telefone: (00) 0 0000-0000<br/>Instagram: @paoeprosa</p>
+
+          <h3 style="margin-top:12px">Horário</h3>
+          <p class="note">Seg–Sáb 06:00–13:00</p>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+        <div style="font-weight:700">Pão & Prosa</div>
+        <div style="color:var(--muted)">© Seu Joaquim • Todos os direitos reservados</div>
+        <div style="color:var(--muted)">Rua das Flores, 123 — Aconchego</div>
+      </div>
+    </footer>
+  </div>
+
+  <button id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+  <!-- Scripts (validação adicional + smooth scroll + back-to-top) -->
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href === '#') return;
+        const target = document.querySelector(href);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+          history.replaceState(null,'',href);
+        }
+      })
+    });
+
+    // Back to top button behavior
+    const back = document.getElementById('backToTop');
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 300) back.classList.add('show'); else back.classList.remove('show');
+    });
+    back.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+    // Form validation + fake send (client-side)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', e=>{
+      e.preventDefault();
+      status.textContent = '';
+
+      // HTML5 constraint validation API
+      if(!form.checkValidity()){
+        // show browser native messages for each invalid field
+        form.reportValidity();
+        status.textContent = 'Por favor, corrija os campos em destaque.';
+        return;
+      }
+
+      // collect values
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        message: form.message.value.trim()
+      };
+
+      // Simulate send: in produção, conecte a um endpoint
+      status.textContent = 'Enviando...';
+      setTimeout(()=>{
+        status.textContent = 'Mensagem enviada! Obrigado, em breve responderemos.';
+        form.reset();
+      },900);
+    });
+  </script>
+</body>
+</html>
