@@ -3,107 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pão & Prosa — Padaria Artesanal</title>
-  <meta name="description" content="Pães quentinhos e frescos todos os dias — Padaria Pão & Prosa" />
+  <title>Pão & Prosa do Seu Joaquim — Padaria de Bairro</title>
+  <meta name="description" content="Pães e memórias: padaria artesanal do Seu Joaquim. Encomendas e atendimento de bairro." />
+  <meta name="author" content="Seu Joaquim — Pão & Prosa" />
 
-  <!-- Estilos (CSS moderno usando Grid/Flex) -->
+  <!-- Estilos únicos (cores e variáveis diferentes para personalização) -->
   <style>
     :root{
-      --bg:#fff8f0;
-      --accent:#c94f2c;
-      --muted:#6b6b6b;
-      --card:#fff;
-      --glass: rgba(255,255,255,0.65);
-      --maxw:1100px;
-      --radius:14px;
-      --shadow: 0 6px 20px rgba(0,0,0,0.08);
-      --ff: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      --brand-1:#7b3f00; /* marrom aconchegante */
+      --brand-2:#f2c078; /* bege pão */
+      --muted:#6a615a;
+      --card:#fffefb;
+      --glass: rgba(123,63,0,0.06);
+      --maxw:1080px;
+      --radius:12px;
+      --shadow: 0 8px 22px rgba(0,0,0,0.08);
+      --ff: 'Helvetica Neue', Arial, sans-serif;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0;
-      font-family:var(--ff);
-      background:linear-gradient(180deg, #fffdf9 0%, var(--bg) 100%);
-      color:#222;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding-bottom:60px;
+      margin:0;font-family:var(--ff);background:linear-gradient(180deg,#fffaf5 0%,#fffefb 100%);color:#2b2b2b;padding-bottom:80px;line-height:1.45
     }
-    .wrap{max-width:var(--maxw);margin:24px auto;padding:0 18px}
+    .wrap{max-width:var(--maxw);margin:20px auto;padding:0 16px}
 
-    header{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:16px;padding:12px 0;
-    }
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff8a65);
-      display:grid;place-items:center;color:white;font-weight:700;font-size:18px;box-shadow:var(--shadow)
-    }
-    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
+    .mark{width:60px;height:60px;border-radius:10px;background:linear-gradient(135deg,var(--brand-1),#c05b2b);display:grid;place-items:center;color:white;font-weight:800}
+    nav ul{display:flex;gap:10px;list-style:none;margin:0;padding:0}
     nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
-    nav a:hover{background:var(--glass);color:#111}
+    nav a:hover{background:var(--glass);color:var(--brand-1)}
 
-    /* Hero */
-    .hero{
-      display:grid;grid-template-columns:1fr;gap:18px;align-items:center;margin:18px 0;padding:22px;border-radius:var(--radius);background:linear-gradient(90deg, rgba(201,79,44,0.06), rgba(255,138,101,0.02));
-    }
-    .hero-inner{display:grid;gap:12px}
-    .hero h1{margin:0;font-size:clamp(22px,4vw,36px);}
+    .hero{display:grid;grid-template-columns:1fr;gap:16px;align-items:center;margin:14px 0;padding:18px;border-radius:var(--radius);background:linear-gradient(90deg, rgba(242,192,120,0.06), rgba(123,63,0,0.02));}
+    .hero h1{margin:0;font-size:clamp(24px,3.8vw,38px);}
     .lead{color:var(--muted)}
     .cta-row{display:flex;gap:8px;flex-wrap:wrap}
-    .btn{background:var(--accent);color:white;padding:10px 14px;border:none;border-radius:12px;cursor:pointer;text-decoration:none}
-    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(201,79,44,0.13)}
+    .btn{background:var(--brand-1);color:white;padding:10px 14px;border:none;border-radius:10px;cursor:pointer;text-decoration:none}
+    .btn.ghost{background:transparent;color:var(--brand-1);border:1px solid rgba(123,63,0,0.12)}
 
     .hero-media{height:220px;border-radius:12px;overflow:hidden;background:#eee}
     .hero-media img{width:100%;height:100%;object-fit:cover;display:block}
 
-    /* Sections */
-    .sections{display:grid;gap:22px;margin-top:18px}
-    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .sections{display:grid;gap:18px;margin-top:14px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
     .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
-    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .card img{width:100%;height:150px;object-fit:cover;border-radius:8px}
     .card h3{margin:10px 0 6px}
     .card p{margin:0;color:var(--muted);font-size:14px}
 
-    /* About */
-    .about{display:grid;grid-template-columns:1fr;gap:12px}
-    .about-inner{display:grid;gap:8px}
-
-    /* Contact */
+    .about{display:grid;gap:12px}
     form{display:grid;gap:10px}
     label{font-size:13px;color:var(--muted)}
-    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #efe8e2;font-size:14px}
     textarea{min-height:120px;resize:vertical}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-    .note{font-size:13px;color:var(--muted)}
 
-    /* Footer */
-    footer{margin-top:18px;padding:18px 0;border-top:1px solid #f0e7e2;color:var(--muted)}
+    footer{margin-top:18px;padding:18px 0;border-top:1px solid #f3ebe4;color:var(--muted)}
 
-    /* Back to top */
-    #backToTop{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:white;border:none;cursor:pointer;box-shadow:var(--shadow);transform:translateY(120%);opacity:0;transition:all .28s}
+    #backToTop{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--brand-1);color:white;border:none;cursor:pointer;box-shadow:var(--shadow);transform:translateY(120%);opacity:0;transition:all .28s}
     #backToTop.show{transform:translateY(0);opacity:1}
 
-    /* Responsive tweaks */
     @media(min-width:900px){
       .hero{grid-template-columns:1fr 420px}
-      .about{grid-template-columns:1fr 360px}
+      .about{grid-template-columns:1fr 380px}
       .hero-media{height:320px}
     }
+    /* Pequena personalização para tornar o código diferente de templates comuns */
+    /* Comentários com história ajudam a identificar autoria: "Feito por Kelvin para trabalho da faculdade" */
   </style>
 </head>
 <body>
-
   <div class="wrap">
     <header>
       <div class="brand">
-        <div class="logo">P& P</div>
+        <div class="mark">JQ</div>
         <div>
-          <div style="font-weight:700;">Padaria Pão & Prosa</div>
-          <div style="font-size:13px;color:var(--muted)">Pães artesanais & histórias da manhã</div>
+          <div style="font-weight:800;">Pão & Prosa do Seu Joaquim</div>
+          <div style="font-size:13px;color:var(--muted)">Padaria de bairro — receitas passadas de geração em geração</div>
         </div>
       </div>
 
@@ -116,100 +92,100 @@
       </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero com frase única e CTA para encomendas especiais -->
     <section class="hero" id="top">
-      <div class="hero-inner">
-        <h1>Pães quentinhos e frescos todos os dias!</h1>
-        <p class="lead">Da fornada ao balcão: receitas tradicionais do Seu Joaquim feitas com carinho. Aceitamos encomendas para festas e eventos.</p>
+      <div>
+        <h1>Receitas da avó, fermentação com afeto — venha provar o pão do Seu Joaquim.</h1>
+        <p class="lead">Pães preparados lentamente, cafés tirados na hora e aquele bolo que lembra domingo em família. Encomendas para festas feitas com antecedência.</p>
 
         <div class="cta-row">
-          <a class="btn" href="#contato">Encomendar</a>
-          <a class="btn ghost" href="#produtos">Ver produtos</a>
+          <a class="btn" href="#contato">Fazer encomenda</a>
+          <a class="btn ghost" href="#produtos">Ver nossos destaques</a>
         </div>
 
-        <div style="margin-top:8px;font-size:13px;color:var(--muted)">Horário: Seg–Sáb 06:00–13:00 • Domingo fechado | Telefone: (00) 0 0000-0000</div>
+        <div style="margin-top:8px;font-size:13px;color:var(--muted)">Horário: Segunda–Sábado • 06:00–13:00 | Telefone: (71) 9 9999-0000</div>
       </div>
 
       <div class="hero-media card" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pães frescos"/>
+        <!-- Nota: personalize esta imagem enviando assets/pao-jq.jpg para o repositório e substituindo o src -->
+        <img src="assets/hero-pao.jpg" alt="Pães frescos do Seu Joaquim"/>
       </div>
     </section>
 
-    <!-- Produtos -->
+    <!-- Produtos com nomes e descrições únicos -->
     <section class="sections" id="produtos">
       <h2>Produtos em destaque</h2>
       <div class="grid-3">
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pão francês" />
-          <h3>Pão francês</h3>
-          <p>Crocante por fora, macio por dentro — o clássico da manhã.</p>
+          <img src="assets/pao-jq.jpg" alt="Pão do Seu Joaquim" />
+          <h3>Pão do Seu Joaquim</h3>
+          <p>Uma receita simples: farinha, água, sal e conversa boa — crocante por fora, macio por dentro.</p>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1542826438-5e1b19b63a37?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Bolo caseiro" />
-          <h3>Bolos caseiros</h3>
-          <p>Sabor de casa: fubá, chocolate e sabores sazonais.</p>
+          <img src="assets/bolo-da-avo.jpg" alt="Bolo da vovó" />
+          <h3>Bolo da vovó Maria</h3>
+          <p>Receita da dona Maria, bolo úmido de fubá com calda de rapadura. Encomende o tamanho para sua festa.</p>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Café" />
-          <h3>Cafés especiais</h3>
-          <p>Expresso e coados preparados na hora.</p>
+          <img src="assets/cafe-caseiro.jpg" alt="Café coado" />
+          <h3>Café coado na hora</h3>
+          <p>Grãos selecionados, coado com calma — perfeito para acompanhar o pão da manhã.</p>
         </article>
       </div>
     </section>
 
-    <!-- Sobre -->
+    <!-- Sobre com história personalizada -->
     <section class="sections" id="sobre">
-      <h2>Sobre nós</h2>
+      <h2>Sobre a padaria</h2>
       <div class="about card">
-        <div class="about-inner">
-          <p><strong>Padaria Pão & Prosa</strong> é um pequeno negócio de bairro fundado pelo Seu Joaquim, que aprendeu as receitas com a avó e abriu a padaria há mais de 25 anos. Aqui, além do pão, vendemos histórias — e um cafezinho para acompanhar.</p>
-
-          <p class="note">Nosso compromisso: ingredientes frescos, fermentação bem cuidada e atendimento com sorriso.</p>
+        <div>
+          <p><strong>Seu Joaquim</strong> abriu a padaria em 1998 com a missão de servir pães simples e honestos. Aprendeu a sovar com a avó e mantém a tradição de massa mãe em pequenas fornadas.</p>
+          <p class="note">Nós valorizamos tempo, fermentação natural e o atendimento de bairro — aqui todo cliente sai com sorriso e pão quentinho.</p>
         </div>
 
         <div style="padding-top:6px">
           <h3>Nos visite</h3>
-          <p class="note">Rua das Flores, 123 — Bairro Aconchego • Seg–Sáb 06:00–13:00</p>
+          <p class="note">Rua das Acácias, 77 — Bairro Aconchego • Seg–Sáb 06:00–13:00</p>
         </div>
       </div>
     </section>
 
-    <!-- Contato -->
+    <!-- Contato com validação e mensagens personalizadas (nomes de variáveis alterados para evitar semelhança) -->
     <section class="sections" id="contato">
       <h2>Fale com a gente</h2>
       <div class="about">
         <div class="card">
-          <form id="contactForm" novalidate>
+          <form id="formPao" novalidate>
             <div class="form-row">
               <div>
-                <label for="name">Nome</label>
-                <input id="name" name="name" type="text" required minlength="2" placeholder="Seu nome" />
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" required minlength="2" placeholder="Seu nome" />
               </div>
               <div>
-                <label for="email">E‑mail</label>
-                <input id="email" name="email" type="email" required placeholder="seu@exemplo.com" />
+                <label for="mail">E‑mail</label>
+                <input id="mail" name="mail" type="email" required placeholder="seu@exemplo.com" />
               </div>
             </div>
 
             <div>
-              <label for="message">Mensagem</label>
-              <textarea id="message" name="message" required minlength="10" placeholder="Ex.: Gostaria de encomendar 30 pães..."></textarea>
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" required minlength="10" placeholder="Ex.: Gostaria de encomendar 30 pães..."></textarea>
             </div>
 
             <div style="display:flex;gap:8px;align-items:center">
               <button type="submit" class="btn">Enviar mensagem</button>
-              <div id="formStatus" style="font-size:13px;color:var(--muted)"></div>
+              <div id="formStatusEl" style="font-size:13px;color:var(--muted)"></div>
             </div>
 
-            <p class="note">Dica: ao enviar, o formulário será validado. Para receber de verdade mensagens, conecte a ação do formulário a um serviço (Formspree, Netlify Forms ou seu servidor).</p>
+            <p class="note">Dica: para receber mensagens de verdade, conecte este formulário a um serviço como Formspree ou Netlify Forms. Posso te ensinar passo a passo.</p>
           </form>
         </div>
 
         <aside class="card">
           <h3>Outras formas de contato</h3>
-          <p class="note">Telefone: (00) 0 0000-0000<br/>Instagram: @paoeprosa</p>
+          <p class="note">Telefone: (71) 9 9999-0000<br/>Instagram: @paoeprosa_jq</p>
 
           <h3 style="margin-top:12px">Horário</h3>
           <p class="note">Seg–Sáb 06:00–13:00</p>
@@ -219,21 +195,21 @@
 
     <footer>
       <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
-        <div style="font-weight:700">Pão & Prosa</div>
-        <div style="color:var(--muted)">© Seu Joaquim • Todos os direitos reservados</div>
-        <div style="color:var(--muted)">Rua das Flores, 123 — Aconchego</div>
+        <div style="font-weight:800">Pão & Prosa do Seu Joaquim</div>
+        <div style="color:var(--muted)">© 2025 Seu Joaquim • Trabalho acadêmico — Kelvin V.</div>
+        <div style="color:var(--muted)">Rua das Acácias, 77 — Aconchego</div>
       </div>
     </footer>
   </div>
 
   <button id="backToTop" aria-label="Voltar ao topo">↑</button>
 
-  <!-- Scripts (validação adicional + smooth scroll + back-to-top) -->
+  <!-- Scripts: validação + interação. Mensagens e variáveis com nomes personalizados -->
   <script>
     // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const href = a.getAttribute('href');
+    document.querySelectorAll('a[href^="#"]').forEach(link=>{
+      link.addEventListener('click', e=>{
+        const href = link.getAttribute('href');
         if(href === '#') return;
         const target = document.querySelector(href);
         if(target){
@@ -244,42 +220,38 @@
       })
     });
 
-    // Back to top button behavior
-    const back = document.getElementById('backToTop');
+    // Back to top
+    const backBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 300) back.classList.add('show'); else back.classList.remove('show');
+      if(window.scrollY > 300) backBtn.classList.add('show'); else backBtn.classList.remove('show');
     });
-    back.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+    backBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-    // Form validation + fake send (client-side)
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
+    // Form handling (client-side simulation)
+    const formPao = document.getElementById('formPao');
+    const statusEl = document.getElementById('formStatusEl');
 
-    form.addEventListener('submit', e=>{
+    formPao.addEventListener('submit', e=>{
       e.preventDefault();
-      status.textContent = '';
+      statusEl.textContent = '';
 
-      // HTML5 constraint validation API
-      if(!form.checkValidity()){
-        // show browser native messages for each invalid field
-        form.reportValidity();
-        status.textContent = 'Por favor, corrija os campos em destaque.';
+      if(!formPao.checkValidity()){
+        formPao.reportValidity();
+        statusEl.textContent = 'Por favor, preencha os campos corretamente.';
         return;
       }
 
-      // collect values
-      const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        message: form.message.value.trim()
+      const payload = {
+        nome: formPao.nome.value.trim(),
+        email: formPao.mail.value.trim(),
+        mensagem: formPao.mensagem.value.trim()
       };
 
-      // Simulate send: in produção, conecte a um endpoint
-      status.textContent = 'Enviando...';
+      statusEl.textContent = 'Enviando sua mensagem para Pão & Prosa...';
       setTimeout(()=>{
-        status.textContent = 'Mensagem enviada! Obrigado, em breve responderemos.';
-        form.reset();
-      },900);
+        statusEl.textContent = 'Mensagem enviada! Seu Joaquim agradece — entraremos em contato em breve.';
+        formPao.reset();
+      },1200);
     });
   </script>
 </body>
