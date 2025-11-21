@@ -1,0 +1,143 @@
+/* ======= ESTILOS GERAIS ======= */
+:root {
+  --cor-primaria: #b46828;
+  --cor-secundaria: #f5e6d3;
+  --cor-escura: #3e2a1f;
+  --cor-clara: #ffffff;
+  --cor-destaque: #e8b888;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  background: var(--cor-secundaria);
+  color: var(--cor-escura);
+  line-height: 1.6;
+}
+
+/* ======= HEADER ======= */
+header {
+  background: var(--cor-primaria);
+  color: var(--cor-clara);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: var(--cor-clara);
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  opacity: 0.8;
+}
+
+/* ======= HERO ======= */
+.hero {
+  background: url("assets/padaria.jpg") center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cor-clara);
+  text-shadow: 2px 2px 5px #000;
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ======= SEÇÕES ======= */
+section {
+  padding: 50px 20px;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.produto {
+  background: var(--cor-clara);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #0003;
+  text-align: center;
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* ======= SOBRE NÓS ======= */
+.sobre {
+  background: var(--cor-clara);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 5px #0002;
+}
+
+/* ======= FORMULÁRIO ======= */
+form {
+  background: var(--cor-clara);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 2px 6px #0002;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: var(--cor-primaria);
+  color: var(--cor-clara);
+  padding: 12px 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: var(--cor-escura);
+}
+
+/* ======= BOTÃO VOLTAR AO TOPO ======= */
+#topo {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--cor-primaria);
+  color: #fff;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+  background: var(--cor-primaria);
+  color: var(--cor-clara);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
